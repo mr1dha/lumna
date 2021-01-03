@@ -1,4 +1,4 @@
-package Stressmeter;
+package Stressmeter.Iterator;
 
 import java.util.ArrayList;
 

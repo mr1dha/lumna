@@ -1,4 +1,4 @@
-package Stressmeter;
+package Stressmeter.Iterator;
 
 public class Question {
 	private String question;
