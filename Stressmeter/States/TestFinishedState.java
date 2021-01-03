@@ -1,6 +1,6 @@
 package Stressmeter.States;
 
-public class TestFinished implements State {
+public class TestFinishedState implements State {
 
 	@Override
 	public void chooseAnswer() {
