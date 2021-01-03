@@ -1,9 +1,9 @@
 package Stressmeter;
 
 public class Stressmeter {
-	private Iterator questions = new QuestionRepository().getIterator();
+	private QuestionRepository questions = new QuestionRepository();
 
-	public Question getQuestion() {
-		return (Question) questions.next();
+	public Iterator getQuestion() {
+		return questions.getIterator();
 	}
 }

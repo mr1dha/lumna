@@ -5,6 +5,11 @@ import java.util.ArrayList;
 public class QuestionRepository implements Container{
 	public ArrayList<Question> questions;
 
+	public QuestionRepository() {
+		questions = new ArrayList<>();
+		this.prepareQuestion();
+	}
+
 	@Override
 	public Iterator getIterator() {
 		return new QuestionIterator();  
@@ -24,5 +29,10 @@ public class QuestionRepository implements Container{
 				return questions.get(index++);
 			return null;			
 		}
+	}
+
+	private void prepareQuestion() {
+		this.questions.add(new Question("Apakah kamu cukup tidur?", false));
+		this.questions.add(new Question("Apakah kamu memiliki teman dekat?", false));
 	}
 }
