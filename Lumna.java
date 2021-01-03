@@ -4,6 +4,6 @@ import Stressmeter.*;
 class Lumna {
 	public static void main(String[] args) {
 		ArticleController articleController = ArticleController.getInstance();
-		Stressmeter stressMeter = Stressmeter.getInstance();
+		Stressmeter stressMeter = new Stressmeter();
 	}
 }

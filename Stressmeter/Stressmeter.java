@@ -4,27 +4,25 @@ import Stressmeter.Iterator.*;
 import Stressmeter.States.*;
 
 public class Stressmeter {
-	static Stressmeter stressmeter; //Singleton Pattern
-	private static Iterator questions; //Iterator Patterm
+	//Iterator Patterm
+	private static Iterator questions;
 
-	State noAnswerState;	//State Patter
+	//State Patter
+	State noAnswerState;
 	State testFinishedState;
 	State questionAnsweredState;
 	State state;
 
-	private Stressmeter() {
+	private static float stressScore;
+
+	public Stressmeter() {
 		questions = new QuestionRepository().getIterator();
 		noAnswerState = new NoAnswerState();
 		testFinishedState = new TestFinishedState();
 		questionAnsweredState = new QuestionAnsweredState();
-		state = noAnswerState;
-	}
 
-	public static Stressmeter getInstance() {
-		if (stressmeter == null ) {
-			stressmeter = new Stressmeter();
-		}
-		return stressmeter;
+		if (questions.getIndex() == 0)
+			state = noAnswerState;
 	}
 
 	public Question getQuestion() {
@@ -44,5 +42,13 @@ public class Stressmeter {
 
 	public void finishTest() {
 		state.showResult();
+	}
+
+	public void increaseStressScore() {
+		stressScore += 10.0f;
+	}
+
+	public float calculateStressScoreResult() {
+		return stressScore / (questions.getIndex() + 1) * 0.01f;
 	}
 }

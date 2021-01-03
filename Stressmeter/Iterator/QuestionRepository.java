@@ -2,7 +2,7 @@ package Stressmeter.Iterator;
 
 import java.util.ArrayList;
 
-public class QuestionRepository implements Container{
+public class QuestionRepository implements Container {
 	public ArrayList<Question> questions;
 
 	public QuestionRepository() {
@@ -28,6 +28,10 @@ public class QuestionRepository implements Container{
 			if (this.hasNext())
 				return questions.get(index++);
 			return null;			
+		}
+
+		public int getIndex() {
+			return index;
 		}
 	}
 
