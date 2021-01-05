@@ -1,6 +1,6 @@
 package Articles;
 
-public class ArticleDisplay {
+public class ArticleView {
 
 	public void display(String slug, String content) {
 		System.out.println("============================================");
