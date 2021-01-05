@@ -7,7 +7,5 @@ class Lumna {
 		Stressmeter stressmeter = new Stressmeter();
 
 		stressmeter.answerQuestion();
-		stressmeter.answerQuestion();
-		stressmeter.answerQuestion();
 	}
 }
