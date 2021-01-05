@@ -3,10 +3,10 @@ package Stressmeter.Iterator;
 import java.util.ArrayList;
 
 public class QuestionRepository implements Container {
-	public ArrayList<Question> questions;
+	public ArrayList<Question> questionList;
 
 	public QuestionRepository() {
-		questions = new ArrayList<>();
+		questionList = new ArrayList<>();
 		this.prepareQuestion();
 	}
 
@@ -16,17 +16,17 @@ public class QuestionRepository implements Container {
 	}
 
 	private class QuestionIterator implements Iterator {
-		int index;
+		int index = 0;
 
 		@Override
 		public boolean hasNext(){
-			return index < questions.size();
+			return index < questionList.size();
 		}
 
 		@Override
 		public Object next() {
 			if (this.hasNext())
-				return questions.get(index++);
+				return questionList.get(index++);
 			return null;			
 		}
 
@@ -36,7 +36,7 @@ public class QuestionRepository implements Container {
 	}
 
 	private void prepareQuestion() {
-		this.questions.add(new Question("Apakah kamu cukup tidur?", false));
-		this.questions.add(new Question("Apakah kamu memiliki teman dekat?", false));
+		this.questionList.add(new Question("Apakah kamu cukup tidur?", false));
+		this.questionList.add(new Question("Apakah kamu memiliki teman dekat?", false));
 	}
 }

@@ -9,11 +9,11 @@ public class Question {
 		this.answer = a;
 	}
 
-	public String getQuestion() {
+	public String question() {
 		return this.question;
 	}
 
-	public boolean getAnswer() {
+	public boolean answer() {
 		return this.answer;
 	}
 }

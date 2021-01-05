@@ -5,7 +5,7 @@ import Stressmeter.States.*;
 
 public class Stressmeter {
 	//Iterator Patterm
-	private static Iterator questions;
+	private Iterator questions;
 
 	//State Patter
 	State noAnswerState;
@@ -13,21 +13,21 @@ public class Stressmeter {
 	State questionAnsweredState;
 	State state;
 
-	private static float stressScore;
+	float stressScore;
 
 	public Stressmeter() {
 		questions = new QuestionRepository().getIterator();
-		noAnswerState = new NoAnswerState();
-		testFinishedState = new TestFinishedState();
-		questionAnsweredState = new QuestionAnsweredState();
+		noAnswerState = new NoAnswerState(this);
+		testFinishedState = new TestFinishedState(this);
+		questionAnsweredState = new QuestionAnsweredState(this);
 
-		if (questions.getIndex() == 0)
+		if (this.questions.getIndex() == 0)
 			state = noAnswerState;
 	}
 
 	public Question getQuestion() {
-		if (questions.hasNext()) {
-			return (Question) questions.next();
+		if (this.questions.hasNext()) {
+			return (Question) this.questions.next();
 		}
 		return null;
 	}
@@ -49,6 +49,6 @@ public class Stressmeter {
 	}
 
 	public float calculateStressScoreResult() {
-		return stressScore / (questions.getIndex() + 1) * 0.01f;
+		return stressScore / (this.questions.getIndex() + 1) * 0.01f;
 	}
 }
