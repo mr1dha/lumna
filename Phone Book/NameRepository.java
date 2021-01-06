@@ -1,6 +1,6 @@
 public class NameRepository implements Container {
-    public String names[] = { "Ridha (0823-0000-0000)", "Niara (0823-0000-0000)", "Putri (0823-0000-0000)",
-            "Putra (0823-0000-0000)" };
+    public String names[][] = { { "Ridha", "0823-0000-0000" }, { "Niara ", "0823-0000-0000" },
+            { "Putri", "0823-0000-0000" }, { "Putra", "0823-0000-0000" } };
 
     @Override
     public Iterator getIterator() {
