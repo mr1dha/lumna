@@ -5,7 +5,7 @@ Build simple search engine using information retrieval concept.
 <p>This project tested on Ubuntu 18.04 LTS</p>
 
 <ol start="1">
-<li>Design Patterns</li>
+<li>Overview</li>
 <ul>
 <li>Apa itu Lumna?</li>
 <p>LUMNA (Love U’re Mental, Now & Always) adalah sebuah platform Mental Health Care yang memmiliki beberapa fitur berikut</p>
