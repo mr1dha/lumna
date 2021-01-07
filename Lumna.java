@@ -1,4 +1,5 @@
 import Articles.*;
+import PhoneBook.*;
 import Stressmeter.*;
 import java.util.Scanner;
 
@@ -8,7 +9,7 @@ class Lumna {
 	public static void main(String[] args) {
 
 		System.out.println("WELCOME TO LUMNA");
-		System.out.println("1. Read some articles\n2. Get Psycholog Contacts\n3. Stressmeter Test");
+		System.out.println("1. Read some articles\n2. Get Psycholog Phone Book\n3. Stressmeter Test");
 		System.out.print("Choose your aim : ");
 		int option = Lumna.in.nextInt();
 
@@ -18,7 +19,7 @@ class Lumna {
 				break;
 
 			case 2:
-				//Masukkan kode Kontak Psikoloh di sini!
+				new Lumna().startPhoneBook();
 				break;
 
 			case 3:
@@ -30,6 +31,21 @@ class Lumna {
 	void startStressmeterTest() {
 		Stressmeter stressmeter = new Stressmeter();
 		stressmeter.answerQuestion();
+	}
+
+	void startPhoneBook() {
+		NameRepository namesRepository = new NameRepository();
+		int number = 1;
+		System.out.println("=================================");
+		System.out.println("Psychologs Ready to get Contacted");
+		System.out.println("=================================");
+		for (Iterator iter = namesRepository.getIterator(); iter.hasNext();) {
+			String[] name = (String[]) iter.next();
+			System.out.println("\Psycholog " + number + ": ");
+			System.out.println("Name \t: "+name[0]);
+			System.out.println("Contact : " + name[1]);
+			number += 1;
+		}
 	}
 
 	void startReadArticles() {
