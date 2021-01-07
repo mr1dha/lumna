@@ -1,8 +1,6 @@
 # Lumna | Mental Health Care
 <p>Muhammad Ridha | 1808107010023</p>
 <p>Rico Halim | 1808107010062</p>
-Build simple search engine using information retrieval concept. 
-<p>This project tested on Ubuntu 18.04 LTS</p>
 
 <ol start="1">
 <li>Overview</li>
