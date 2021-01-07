@@ -36,7 +36,7 @@ public class QuestionRepository implements Container {
 	}
 
 	private void prepareQuestion() {
-		this.questionList.add(new Question("Apakah kamu sering bergadang?", true));
+		this.questionList.add(new Question("Apakah kamu sering Overthinking?", true));
 		this.questionList.add(new Question("Apakah kamu memiliki teman dekat?", false));
 		this.questionList.add(new Question("Apakah kamu sering curhat dengan teman/orang tua?", false));
 	}

@@ -41,7 +41,7 @@ class Lumna {
 		System.out.println("=================================");
 		for (Iterator iter = namesRepository.getIterator(); iter.hasNext();) {
 			String[] name = (String[]) iter.next();
-			System.out.println("\Psycholog " + number + ": ");
+			System.out.println("\nPsycholog " + number + ": ");
 			System.out.println("Name \t: "+name[0]);
 			System.out.println("Contact : " + name[1]);
 			number += 1;
